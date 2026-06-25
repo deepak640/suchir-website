@@ -257,49 +257,24 @@ export default function About() {
             </div>
           </div>
 
-          {/* Tags + CTA */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-              {['Food & Beverage', 'Community', 'Brand Strategy'].map((tag) => (
-                <span
-                  key={tag}
-                  className="font-body"
-                  style={{
-                    fontSize: '0.65rem',
-                    padding: '0.25rem 0.7rem',
-                    border: '1px solid rgba(200,161,90,0.15)',
-                    color: '#444',
-                    letterSpacing: '0.06em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <button
-              onClick={() => document.getElementById('ventures')?.scrollIntoView({ behavior: 'smooth' })}
-              className="font-body"
-              style={{
-                background: 'none',
-                border: 'none',
-                padding: 0,
-                cursor: 'pointer',
-                fontSize: '0.75rem',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: '#C8A15A',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                transition: 'gap 0.3s',
-                flexShrink: 0,
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.gap = '0.9rem')}
-              onMouseLeave={(e) => (e.currentTarget.style.gap = '0.5rem')}
-            >
-              View Ventures <span>→</span>
-            </button>
+          {/* Tags */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            {['Food & Beverage', 'Community', 'Brand Strategy'].map((tag) => (
+              <span
+                key={tag}
+                className="font-body"
+                style={{
+                  fontSize: '0.65rem',
+                  padding: '0.25rem 0.7rem',
+                  border: '1px solid rgba(200,161,90,0.15)',
+                  color: '#444',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </motion.div>
       </div>

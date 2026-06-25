@@ -147,56 +147,6 @@ export default function Ventures() {
       style={{ background: '#0A0A0A', padding: '7rem 0', position: 'relative' }}
     >
       <div className="site-container">
-        {/* Header */}
-        <div
-          ref={ref}
-          style={{
-            display: 'flex',
-            alignItems: 'flex-end',
-            justifyContent: 'space-between',
-            gap: '2rem',
-            marginBottom: '3.5rem',
-            flexWrap: 'wrap',
-          }}
-        >
-          <div>
-            <div style={{ overflow: 'hidden' }}>
-              <motion.h2
-                initial={{ y: '110%' }}
-                animate={inView ? { y: 0 } : {}}
-                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-                className="font-heading"
-                style={{
-                  fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)',
-                  fontWeight: 700,
-                  color: '#F5F5F5',
-                  lineHeight: 1.05,
-                  letterSpacing: '-0.02em',
-                  margin: 0,
-                }}
-              >
-                Brands that shape{' '}
-                <span className="italic text-gradient">culture.</span>
-              </motion.h2>
-            </div>
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="font-body"
-            style={{
-              color: '#555',
-              fontSize: '0.875rem',
-              lineHeight: 1.75,
-              maxWidth: '280px',
-            }}
-          >
-            Three ventures, one vision — defining how India eats, drinks, and gathers.
-          </motion.p>
-        </div>
-
         {/* Top border */}
         <div style={{ height: '1px', background: 'rgba(200,161,90,0.15)', marginBottom: '0' }} />
 
