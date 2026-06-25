@@ -54,8 +54,8 @@ function Field({
   const [focused, setFocused] = useState(false);
   const sharedStyle: React.CSSProperties = {
     width: '100%',
-    background: focused ? 'rgba(200,161,90,0.04)' : 'rgba(255,255,255,0.03)',
-    border: `1px solid ${focused ? '#C8A15A' : 'rgba(255,255,255,0.12)'}`,
+    background: focused ? 'rgba(200,161,90,0.06)' : 'rgba(255,255,255,0.07)',
+    border: `1px solid ${focused ? '#C8A15A' : 'rgba(255,255,255,0.35)'}`,
     color: '#F5F5F5',
     fontSize: '0.9375rem',
     padding: '0.875rem 1rem',
@@ -75,7 +75,7 @@ function Field({
           fontSize: '0.65rem',
           letterSpacing: '0.18em',
           textTransform: 'uppercase',
-          color: focused ? '#C8A15A' : '#888',
+          color: focused ? '#C8A15A' : '#bbb',
           marginBottom: '0.5rem',
           transition: 'color 0.3s',
         }}
@@ -105,7 +105,7 @@ function Field({
           style={{ ...sharedStyle }}
         />
       )}
-      <style>{`input::placeholder, textarea::placeholder { color: #555; }`}</style>
+      <style>{`input::placeholder, textarea::placeholder { color: #999; }`}</style>
     </div>
   );
 }
@@ -250,7 +250,7 @@ export default function Contact() {
                     e.currentTarget.style.color = '#F5F5F5';
                   }}
                 >
-                  <span>Send Message</span>
+                  <span>Get in Touch</span>
                   <RiArrowRightUpLine size={18} />
                 </button>
               </form>
@@ -339,7 +339,7 @@ export default function Contact() {
       <style>{`
         @media (max-width: 767px) {
           .contact-cols { grid-template-columns: 1fr !important; gap: 3rem !important; }
-          .send-btn { width: 50% !important; }
+          .send-btn { width: auto !important; font-size: 0.68rem !important; white-space: nowrap !important; padding: 0.75rem 1.25rem !important; letter-spacing: 0.08em !important; }
         }
       `}</style>
     </section>
