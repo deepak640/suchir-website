@@ -130,26 +130,6 @@ export default function Contact() {
       ref={ref}
       style={{ background: '#0A0A0A', paddingTop: '6rem', position: 'relative', overflow: 'hidden' }}
     >
-      {/* Ghost watermark */}
-      <div
-        className="font-heading"
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          fontSize: 'clamp(8rem, 20vw, 18rem)',
-          fontWeight: 900,
-          color: 'rgba(200,161,90,0.025)',
-          whiteSpace: 'nowrap',
-          pointerEvents: 'none',
-          userSelect: 'none',
-          letterSpacing: '-0.04em',
-        }}
-      >
-        CONNECT
-      </div>
-
       <div className="site-container" style={{ position: 'relative', zIndex: 1 }}>
 
         {/* ── Big heading ── */}
@@ -242,12 +222,13 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="font-body"
+                  className="font-body send-btn"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    width: '100%',
+                    gap: '1.5rem',
+                    width: 'auto',
                     background: 'none',
                     border: '1px solid rgba(200,161,90,0.35)',
                     color: '#F5F5F5',
@@ -358,6 +339,7 @@ export default function Contact() {
       <style>{`
         @media (max-width: 767px) {
           .contact-cols { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .send-btn { width: 50% !important; }
         }
       `}</style>
     </section>
