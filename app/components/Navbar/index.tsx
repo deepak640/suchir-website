@@ -10,7 +10,7 @@ import { navItems } from '@/lib/data';
 export default function Navbar() {
   const scrolled = useScrolled(60);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const activeSection = useActiveSection(['about', 'ventures', 'journey', 'contact']);
+  const activeSection = useActiveSection(['about', 'ventures', 'contact']);
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
