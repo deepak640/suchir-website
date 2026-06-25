@@ -160,26 +160,6 @@ export default function Ventures() {
           }}
         >
           <div>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5 }}
-              className="font-body"
-              style={{
-                color: '#C8A15A',
-                fontSize: '0.7rem',
-                letterSpacing: '0.22em',
-                textTransform: 'uppercase',
-                marginBottom: '1rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.75rem',
-              }}
-            >
-              <span style={{ width: '2rem', height: '1px', background: '#C8A15A', flexShrink: 0 }} />
-              Featured Ventures
-            </motion.p>
-
             <div style={{ overflow: 'hidden' }}>
               <motion.h2
                 initial={{ y: '110%' }}
