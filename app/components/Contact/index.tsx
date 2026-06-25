@@ -44,7 +44,7 @@ function Marquee() {
   );
 }
 
-/* ─── Underline input ─────────────────────────────────────────── */
+/* ─── Bordered input ──────────────────────────────────────────── */
 function Field({
   label, type = 'text', value, onChange, placeholder, multiline = false,
 }: {
@@ -54,20 +54,20 @@ function Field({
   const [focused, setFocused] = useState(false);
   const sharedStyle: React.CSSProperties = {
     width: '100%',
-    background: 'none',
-    border: 'none',
-    borderBottom: `1px solid ${focused ? '#C8A15A' : 'rgba(200,161,90,0.2)'}`,
+    background: focused ? 'rgba(200,161,90,0.04)' : 'rgba(255,255,255,0.03)',
+    border: `1px solid ${focused ? '#C8A15A' : 'rgba(255,255,255,0.12)'}`,
     color: '#F5F5F5',
-    fontSize: '1rem',
-    padding: '0.75rem 0',
+    fontSize: '0.9375rem',
+    padding: '0.875rem 1rem',
     outline: 'none',
     resize: 'none',
     fontFamily: 'inherit',
-    transition: 'border-color 0.3s',
+    transition: 'border-color 0.3s, background 0.3s',
     boxSizing: 'border-box',
+    borderRadius: '2px',
   };
   return (
-    <div style={{ marginBottom: '2.25rem' }}>
+    <div style={{ marginBottom: '1.5rem' }}>
       <label
         className="font-body"
         style={{
@@ -75,8 +75,8 @@ function Field({
           fontSize: '0.65rem',
           letterSpacing: '0.18em',
           textTransform: 'uppercase',
-          color: focused ? '#C8A15A' : '#555',
-          marginBottom: '0.35rem',
+          color: focused ? '#C8A15A' : '#888',
+          marginBottom: '0.5rem',
           transition: 'color 0.3s',
         }}
       >
@@ -84,7 +84,7 @@ function Field({
       </label>
       {multiline ? (
         <textarea
-          rows={4}
+          rows={5}
           required
           value={value}
           placeholder={placeholder}
@@ -105,7 +105,7 @@ function Field({
           style={{ ...sharedStyle }}
         />
       )}
-      <style>{`input::placeholder, textarea::placeholder { color: #333; }`}</style>
+      <style>{`input::placeholder, textarea::placeholder { color: #555; }`}</style>
     </div>
   );
 }
