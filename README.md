@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shuchir Suri — Premium Founder Portfolio
+
+A luxury editorial portfolio website for Shuchir Suri, founder of Food Talk India, Jade Forest, and the Gin Explorers Club.
+
+## Tech Stack
+
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** — animations
+- **Lenis** — smooth scrolling
+- **React Icons**
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── components/
+│   ├── Hero/        # Full-viewport hero with typewriter & mouse tracking
+│   ├── About/       # Split layout biography section
+│   ├── Ventures/    # Three premium venture cards
+│   ├── Timeline/    # Scroll-animated vertical timeline
+│   ├── Philosophy/  # Full-screen editorial quote section
+│   ├── Gallery/     # Filterable masonry gallery
+│   ├── Impact/      # Animated counter stats
+│   ├── Contact/     # Social links & contact section
+│   ├── Navbar/      # Transparent → blurred sticky navbar
+│   ├── Footer/      # Minimal footer
+│   └── ui/          # Reusable primitives (Button, SectionLabel, SmoothScroll)
+├── hooks/           # useScrolled, useActiveSection, useCounter
+├── lib/             # animations.ts (Framer variants), data.ts (content)
+└── types/           # TypeScript interfaces
+```
 
-## Learn More
+## Design Tokens
 
-To learn more about Next.js, take a look at the following resources:
+| Token          | Value     |
+|----------------|-----------|
+| Background     | `#0E0E0E` |
+| Surface        | `#181818` |
+| Primary Text   | `#F5F5F5` |
+| Secondary Text | `#A1A1A1` |
+| Accent Gold    | `#C8A15A` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Adding Real Images
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Replace placeholder images in `public/images/` with actual photos:
 
-## Deploy on Vercel
+- `placeholder-venture-1.jpg` — Food Talk India
+- `placeholder-venture-2.jpg` — Jade Forest
+- `placeholder-venture-3.jpg` — Gin Explorers Club
+- `placeholder-gallery-1.jpg` through `placeholder-gallery-9.jpg` — Gallery
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm run start
+```
