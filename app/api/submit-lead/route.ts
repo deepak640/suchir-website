@@ -36,8 +36,12 @@ export async function POST(req: NextRequest) {
           Last_Name: name,
           Email: email,
           Description: message || '',
+<<<<<<< HEAD
           Lead_Source: 'Web Research',
           Lead_Status: 'Contacted',
+=======
+          Lead_Source: 'Shuchir Website',
+>>>>>>> refs/remotes/origin/main
         }],
       }),
     });
