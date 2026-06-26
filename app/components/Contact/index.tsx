@@ -4,12 +4,12 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { RiLinkedinFill, RiInstagramLine, RiMailLine, RiArrowRightUpLine } from "react-icons/ri";
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/shuchirsuri/";
+const LINKEDIN_URL = "https://www.linkedin.com/in/shuchir-suri-058251b/";
 const INSTAGRAM_URL = "https://www.instagram.com/shuchirsuri/";
 const EMAIL = "hello@shuchirsuri.com";
 
 /* ─── Marquee strip ───────────────────────────────────────────── */
-const ticker = ["Food Talk India", "Jade Forest", "Anthem", "Delhi", "India"];
+const ticker = ["Food Talk India", "Jade Forest", "Anthem"];
 
 function Marquee() {
   const repeated = [...ticker, ...ticker, ...ticker];

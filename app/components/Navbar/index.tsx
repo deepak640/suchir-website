@@ -66,7 +66,7 @@ export default function Navbar() {
               onMouseEnter={(e) => (e.currentTarget.style.color = '#C8A15A')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#F5F5F5')}
             >
-              SS
+              Shuchir Suri
             </a>
 
             {/* Desktop Nav */}
