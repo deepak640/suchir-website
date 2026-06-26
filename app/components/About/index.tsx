@@ -154,7 +154,7 @@ export default function About() {
                   className="font-body"
                   style={{ fontSize: "0.7rem", color: "#3a3a3a", letterSpacing: "0.1em", textTransform: "uppercase" }}
                 >
-                  Entrepreneur · Content Creator · Delhi
+                  Entrepreneur · Content Creator
                 </p>
               </div>
               <p className="font-body" style={{ fontSize: "0.7rem", color: "#2a2a2a", letterSpacing: "0.06em" }}>
