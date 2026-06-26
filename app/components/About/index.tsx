@@ -225,7 +225,7 @@ export default function About() {
               <p className="font-body" style={{ color: "#A1A1A1", fontSize: "0.9375rem", lineHeight: 1.85 }}>
                 I build culture-first brands, produce experiences, and spend a lot of time demystifying the F&amp;B
                 space. From <span style={{ color: "#F5F5F5" }}>Food Talk India</span>, one of India&apos;s largest food
-                networks, to <span style={{ color: "#F5F5F5" }}>Jade Forest</span> (seed-funded premium mixers) and{" "}
+                networks, to <span style={{ color: "#F5F5F5" }}>Jade Forest</span> and{" "}
                 <span style={{ color: "#F5F5F5" }}>Anthem</span>, that&apos;s enough about me for now. Welcome to my
                 website!
               </p>
