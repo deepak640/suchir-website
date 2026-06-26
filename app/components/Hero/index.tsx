@@ -220,26 +220,6 @@ export default function Hero() {
               style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem' }}
             >
               <button
-                onClick={() => document.getElementById('ventures')?.scrollIntoView({ behavior: 'smooth' })}
-                className="font-body"
-                style={{
-                  background: '#C8A15A',
-                  color: '#0E0E0E',
-                  border: 'none',
-                  padding: '0.875rem 2rem',
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  cursor: 'pointer',
-                  transition: 'background 0.3s',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = '#D4B87A')}
-                onMouseLeave={(e) => (e.currentTarget.style.background = '#C8A15A')}
-              >
-                Explore Ventures
-              </button>
-              <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="font-body"
                 style={{
