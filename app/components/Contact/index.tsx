@@ -132,14 +132,15 @@ function Field({
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-
-  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
     try {
       const res = await fetch('/api/submit-lead', {
         method: 'POST',
@@ -150,9 +151,10 @@ export default function Contact() {
       if (!res.ok) throw new Error(data.error || 'Submission failed');
       setSent(true);
       setForm({ name: "", email: "", message: "" });
-      setTimeout(() => setSent(false), 4000);
     } catch (err: any) {
-      setError(err.message);
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -292,8 +294,15 @@ export default function Contact() {
                   multiline
                 />
 
+                {error && (
+                  <p className="font-body" style={{ color: "#e05c5c", fontSize: "0.8rem", marginBottom: "1rem" }}>
+                    {error}
+                  </p>
+                )}
+
                 <button
                   type="submit"
+                  disabled={loading}
                   className="font-body send-btn"
                   style={{
                     display: "flex",
@@ -308,10 +317,12 @@ export default function Contact() {
                     fontSize: "0.8125rem",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
-                    cursor: "pointer",
+                    cursor: loading ? "not-allowed" : "pointer",
+                    opacity: loading ? 0.6 : 1,
                     transition: "all 0.35s",
                   }}
                   onMouseEnter={(e) => {
+                    if (loading) return;
                     e.currentTarget.style.background = "#C8A15A";
                     e.currentTarget.style.borderColor = "#C8A15A";
                     e.currentTarget.style.color = "#0E0E0E";
@@ -322,7 +333,7 @@ export default function Contact() {
                     e.currentTarget.style.color = "#F5F5F5";
                   }}
                 >
-                  <span>Get in Touch</span>
+                  <span>{loading ? "Sending…" : "Get in Touch"}</span>
                   <RiArrowRightUpLine size={18} />
                 </button>
               </form>
