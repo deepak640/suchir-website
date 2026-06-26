@@ -3,15 +3,16 @@ import './globals.css';
 import SmoothScroll from '@/components/ui/SmoothScroll';
 
 export const metadata: Metadata = {
-  title: 'Shuchir Suri — Entrepreneur, Food Talk India & Jade Forest',
+  title: 'Shuchir Suri — Entrepreneur & Content Creator, Delhi',
   description:
-    "Delhi-based entrepreneur Shuchir Suri co-founded Food Talk India, launched Jade Forest premium mixers, and created India's largest gin festival — the Gin Explorers Club.",
+    "Delhi-based entrepreneur and content creator building culture-first brands, producing experiences, and demystifying the F&B space. Founder of Food Talk India, Jade Forest, and Anthem.",
   keywords: [
     'Shuchir Suri',
     'Food Talk India',
     'Jade Forest',
-    'Gin Explorers Club',
+    'Anthem',
     'Delhi Entrepreneur',
+    'Delhi Creator',
     'Indian Food Community',
     'Premium Mixers India',
     'Craft Gin India',
@@ -19,16 +20,16 @@ export const metadata: Metadata = {
   authors: [{ name: 'Shuchir Suri' }],
   openGraph: {
     type: 'website',
-    title: 'Shuchir Suri — Entrepreneur & Community Builder',
+    title: 'Shuchir Suri — Entrepreneur & Content Creator',
     description:
-      "Delhi-based entrepreneur behind Food Talk India, Jade Forest, and India's largest gin festival.",
+      "Delhi-based entrepreneur and content creator — building culture-first brands, producing experiences, and demystifying the F&B space.",
     siteName: 'Shuchir Suri',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shuchir Suri — Entrepreneur & Community Builder',
+    title: 'Shuchir Suri — Entrepreneur & Content Creator',
     description:
-      "Delhi-based entrepreneur behind Food Talk India, Jade Forest, and India's largest gin festival.",
+      "Delhi-based entrepreneur and content creator — building culture-first brands, producing experiences, and demystifying the F&B space.",
   },
   robots: {
     index: true,

@@ -9,7 +9,7 @@ const INSTAGRAM_URL = 'https://www.instagram.com/shuchirsuri/';
 const EMAIL         = 'hello@shuchirsuri.com';
 
 /* ─── Marquee strip ───────────────────────────────────────────── */
-const ticker = ['Food Talk India', 'Jade Forest', 'Gin Explorers Club', 'Delhi', 'India'];
+const ticker = ['Food Talk India', 'Jade Forest', 'Anthem', 'Delhi', 'India'];
 
 function Marquee() {
   const repeated = [...ticker, ...ticker, ...ticker];
@@ -160,7 +160,7 @@ export default function Contact() {
                 margin: 0,
               }}
             >
-              Let&apos;s Build Something
+              Open for partnerships and
             </motion.h2>
           </div>
           <div style={{ overflow: 'hidden' }}>
@@ -178,7 +178,7 @@ export default function Contact() {
                 margin: 0,
               }}
             >
-              Memorable.
+              collaborations worldwide.
             </motion.h2>
           </div>
         </div>
@@ -278,14 +278,13 @@ export default function Contact() {
               New Delhi, India.
             </p>
             <p className="font-body" style={{ color: '#555', fontSize: '0.8125rem', marginBottom: '3rem', lineHeight: 1.7 }}>
-              Open to collaborations &amp; partnerships worldwide.
+              Open for partnerships and collaborations worldwide.
             </p>
 
             {/* Social links — stacked large links */}
             {[
               { icon: RiLinkedinFill,  label: 'LinkedIn',  handle: 'Shuchir Suri',   href: LINKEDIN_URL,  color: '#0A66C2' },
               { icon: RiInstagramLine, label: 'Instagram', handle: '@shuchirsuri',   href: INSTAGRAM_URL, color: '#E1306C' },
-              { icon: RiMailLine,      label: 'Email',     handle: EMAIL,             href: `mailto:${EMAIL}`, color: '#C8A15A' },
             ].map(({ icon: Icon, label, handle, href, color }, i) => (
               <a
                 key={label}

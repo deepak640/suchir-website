@@ -1,10 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { RiArrowDownLine } from 'react-icons/ri';
 
-const ROLES = ['Entrepreneur', 'Community Builder', 'Experience Curator'];
+const ROLES = ['Entrepreneur', 'Content Creator', 'Culture Curator'];
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -111,7 +112,7 @@ export default function Hero() {
                 className="font-body"
                 style={{ fontSize: '0.65rem', letterSpacing: '0.22em', color: '#C8A15A', textTransform: 'uppercase' }}
               >
-                Founder &amp; Entrepreneur
+                Entrepreneur &amp; Content Creator
               </span>
             </motion.div>
 
@@ -206,8 +207,9 @@ export default function Hero() {
                 marginBottom: '2.25rem',
               }}
             >
-              Delhi-based entrepreneur co-founding brands and communities
-              that define how India eats, drinks, and gathers.
+              Delhi-based entrepreneur and content creator — building
+              culture-first brands, producing experiences, and demystifying
+              the F&amp;B space.
             </motion.p>
 
             {/* CTAs */}
@@ -280,35 +282,15 @@ export default function Hero() {
               <div style={{ position: 'absolute', bottom: '10px', left: '10px', width: '40px', height: '40px', borderBottom: '2px solid #C8A15A', borderLeft: '2px solid #C8A15A', opacity: 0.6 }} />
 
               {/* Card */}
-              <div
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  background: 'linear-gradient(160deg, #1c1c1c 0%, #141414 100%)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '1rem',
-                }}
-              >
-                <div
-                  style={{
-                    width: '80px',
-                    height: '80px',
-                    borderRadius: '50%',
-                    background: '#232323',
-                    border: '1px solid rgba(200,161,90,0.18)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <span className="font-heading text-gradient" style={{ fontSize: '1.75rem', fontWeight: 700 }}>SS</span>
-                </div>
-                <p className="font-body" style={{ color: '#2a2a2a', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-                  Portrait Placeholder
-                </p>
+              <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
+                <Image
+                  src="/images/suchir2.webp"
+                  alt="Shuchir Suri"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                  sizes="(max-width: 768px) 100vw, 26vw"
+                  priority
+                />
               </div>
             </div>
           </motion.div>

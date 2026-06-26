@@ -1,14 +1,15 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const ventures = [
-  { year: '2013', name: 'Food Talk India',    role: "Co-Founder" },
-  { year: '2018', name: 'Jade Forest',         role: "Founder" },
-  { year: '2019', name: 'Gin Explorers Club',  role: "Co-Creator" },
+  { year: '2013', name: 'Food Talk India' },
+  { year: '2018', name: 'Jade Forest' },
+  { year: '2022', name: 'Anthem' },
 ];
 
 export default function About() {
@@ -97,27 +98,17 @@ export default function About() {
             }}
           >
             {/* Corner accents */}
-            <div style={{ position: 'absolute', top: '14px', right: '14px', width: '36px', height: '36px', borderTop: '1.5px solid #C8A15A', borderRight: '1.5px solid #C8A15A', opacity: 0.6 }} />
-            <div style={{ position: 'absolute', bottom: '14px', left: '14px', width: '36px', height: '36px', borderBottom: '1.5px solid #C8A15A', borderLeft: '1.5px solid #C8A15A', opacity: 0.6 }} />
+            <div style={{ position: 'absolute', top: '14px', right: '14px', width: '36px', height: '36px', borderTop: '1.5px solid #C8A15A', borderRight: '1.5px solid #C8A15A', opacity: 0.6, zIndex: 1 }} />
+            <div style={{ position: 'absolute', bottom: '14px', left: '14px', width: '36px', height: '36px', borderBottom: '1.5px solid #C8A15A', borderLeft: '1.5px solid #C8A15A', opacity: 0.6, zIndex: 1 }} />
 
-            {/* Monogram */}
-            <div
-              style={{
-                width: '90px',
-                height: '90px',
-                borderRadius: '50%',
-                background: '#1e1e1e',
-                border: '1px solid rgba(200,161,90,0.2)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <span className="font-heading text-gradient" style={{ fontSize: '2rem', fontWeight: 700 }}>SS</span>
-            </div>
-            <p className="font-body" style={{ color: '#2a2a2a', fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase' }}>
-              Photo Placeholder
-            </p>
+            <Image
+              src="/images/suchir.webp"
+              alt="Shuchir Suri"
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'center top' }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+            />
           </div>
 
           {/* Caption row */}
@@ -127,7 +118,7 @@ export default function About() {
                 Shuchir Suri
               </p>
               <p className="font-body" style={{ fontSize: '0.7rem', color: '#3a3a3a', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                Entrepreneur · Delhi
+                Entrepreneur · Content Creator · Delhi
               </p>
             </div>
             <p className="font-body" style={{ fontSize: '0.7rem', color: '#2a2a2a', letterSpacing: '0.06em' }}>
@@ -165,7 +156,7 @@ export default function About() {
                   margin: 0,
                 }}
               >
-                Building experiences
+                Building culture-first
               </motion.h2>
             </div>
             <div style={{ overflow: 'hidden' }}>
@@ -183,7 +174,7 @@ export default function About() {
                   margin: 0,
                 }}
               >
-                people remember.
+                brands &amp; experiences.
               </motion.h2>
             </div>
           </div>
@@ -191,16 +182,16 @@ export default function About() {
           {/* Bio */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
             <p className="font-body" style={{ color: '#A1A1A1', fontSize: '0.9375rem', lineHeight: 1.85 }}>
-              Shuchir Suri is a Delhi-based entrepreneur working at the intersection of food,
-              beverage, and experiential lifestyle. Over more than a decade he has co-founded
-              brands that have shifted how urban India eats, drinks, and gathers.
+              I&apos;m a Delhi-based entrepreneur and culture curator with a curiosity problem
+              — one that&apos;s defined 15+ years spent at the intersection of food, drink,
+              lifestyle, and live events, making urban India&apos;s best experiences feel inevitable.
             </p>
             <p className="font-body" style={{ color: '#A1A1A1', fontSize: '0.9375rem', lineHeight: 1.85 }}>
-              Starting with <span style={{ color: '#F5F5F5' }}>Food Talk India</span> in 2013 —
-              an invite-only community that became one of India&apos;s largest food networks — he went
-              on to launch <span style={{ color: '#F5F5F5' }}>Jade Forest</span> (premium mixers,
-              seed funded) and co-create the{' '}
-              <span style={{ color: '#F5F5F5' }}>Gin Explorers Club</span>, India&apos;s largest gin festival.
+              I build culture-first brands, produce experiences, and spend a lot of time
+              demystifying the F&amp;B space. From <span style={{ color: '#F5F5F5' }}>Food Talk India</span> —
+              one of India&apos;s largest food networks — to <span style={{ color: '#F5F5F5' }}>Jade Forest</span>{' '}
+              (seed-funded premium mixers) and <span style={{ color: '#F5F5F5' }}>Anthem</span>,
+              that&apos;s enough about me for now. Welcome to my website!
             </p>
           </div>
 
@@ -219,13 +210,12 @@ export default function About() {
               Ventures
             </p>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              {ventures.map(({ year, name, role }, i) => (
+              {ventures.map(({ year, name }, i) => (
                 <div
                   key={name}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
                     padding: '0.875rem 0',
                     borderTop: '1px solid rgba(200,161,90,0.08)',
                     borderBottom: i === ventures.length - 1 ? '1px solid rgba(200,161,90,0.08)' : 'none',
@@ -237,20 +227,6 @@ export default function About() {
                   </span>
                   <span className="font-body" style={{ fontSize: '0.9375rem', color: '#F5F5F5', flex: 1 }}>
                     {name}
-                  </span>
-                  <span
-                    className="font-body"
-                    style={{
-                      fontSize: '0.65rem',
-                      color: '#C8A15A',
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                      flexShrink: 0,
-                      border: '1px solid rgba(200,161,90,0.2)',
-                      padding: '0.2rem 0.6rem',
-                    }}
-                  >
-                    {role}
                   </span>
                 </div>
               ))}
