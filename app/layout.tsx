@@ -3,6 +3,7 @@ import './globals.css';
 import SmoothScroll from '@/components/ui/SmoothScroll';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://shuchir.com'),
   title: 'Shuchir Suri — Entrepreneur & Content Creator, Delhi',
   description:
     "Delhi-based entrepreneur and content creator building culture-first brands, producing experiences, and demystifying the F&B space. Founder of Food Talk India, Jade Forest, and Anthem.",
@@ -24,12 +25,21 @@ export const metadata: Metadata = {
     description:
       "Delhi-based entrepreneur and content creator — building culture-first brands, producing experiences, and demystifying the F&B space.",
     siteName: 'Shuchir Suri',
+    images: [
+      {
+        url: '/images/suchir.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Shuchir Suri — Entrepreneur & Content Creator',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Shuchir Suri — Entrepreneur & Content Creator',
     description:
       "Delhi-based entrepreneur and content creator — building culture-first brands, producing experiences, and demystifying the F&B space.",
+    images: ['/images/suchir.webp'],
   },
   robots: {
     index: true,
