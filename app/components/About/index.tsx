@@ -157,9 +157,6 @@ export default function About() {
                   Entrepreneur · Content Creator
                 </p>
               </div>
-              <p className="font-body" style={{ fontSize: "0.7rem", color: "#2a2a2a", letterSpacing: "0.06em" }}>
-                Est. 2013
-              </p>
             </div>
           </motion.div>
 
@@ -218,16 +215,28 @@ export default function About() {
             {/* Bio */}
             <div style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}>
               <p className="font-body" style={{ color: "#A1A1A1", fontSize: "0.9375rem", lineHeight: 1.85 }}>
-                I&apos;m a Delhi-based entrepreneur and culture curator with a curiosity problem, one that&apos;s
-                defined 15+ years spent at the intersection of food, drink, lifestyle, and live events, making urban
-                India&apos;s best experiences feel inevitable.
+                I&apos;ve spent the past decade building brands at the intersection of culture, creativity, and
+                commerce, shaping how India eats, drinks, and experiences.
               </p>
               <p className="font-body" style={{ color: "#A1A1A1", fontSize: "0.9375rem", lineHeight: 1.85 }}>
-                I build culture-first brands, produce experiences, and spend a lot of time demystifying the F&amp;B
-                space. From <span style={{ color: "#F5F5F5" }}>Food Talk India</span>, one of India&apos;s largest food
-                networks, to <span style={{ color: "#F5F5F5" }}>Jade Forest</span> and{" "}
-                <span style={{ color: "#F5F5F5" }}>Anthem</span>, that&apos;s enough about me for now. Welcome to my
-                website!
+                It started with <span style={{ color: "#F5F5F5" }}>Food Talk India</span>, a media and cultural
+                platform I co-founded that now reaches millions every month. From there came{" "}
+                <span style={{ color: "#F5F5F5" }}>Anthem</span>, a full-service marketing agency that partners with
+                some of India&apos;s biggest brands, both domestic and global. Then came{" "}
+                <span style={{ color: "#F5F5F5" }}>Jade Forest</span>, a better-for-you beverage brand redefining
+                how India drinks, one bottle at a time.
+              </p>
+              <p className="font-body" style={{ color: "#A1A1A1", fontSize: "0.9375rem", lineHeight: 1.85 }}>
+                With <span style={{ color: "#F5F5F5" }}>Explorers Club</span> (formerly Gin Explorers Club),
+                I&apos;ve helped build one of India&apos;s largest experiential IPs, a festival series that has
+                welcomed over 1,00,000 attendees across three cities.
+              </p>
+              <p className="font-body" style={{ color: "#A1A1A1", fontSize: "0.9375rem", lineHeight: 1.85 }}>
+                Across every venture, my focus remains the same: building communities through culture, creating value
+                through partnerships, and crafting experiences that stay with people long after they end.
+              </p>
+              <p className="font-body" style={{ color: "#A1A1A1", fontSize: "0.9375rem", lineHeight: 1.85 }}>
+                You could say I&apos;m a builder at heart, always chasing what&apos;s next.
               </p>
             </div>
 

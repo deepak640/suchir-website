@@ -18,7 +18,7 @@ async function getAccessToken(): Promise<string> {
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, company, mobile, message } = await req.json();
     if (!name || !email) {
       return NextResponse.json({ error: "Name and email required" }, { status: 400 });
     }
@@ -36,9 +36,11 @@ export async function POST(req: NextRequest) {
           {
             Last_Name: name,
             Email: email,
+            Company: company || "",
+            Phone: mobile || "",
             Description: message || "",
             Lead_Source: "Web Research",
-            Lead_Status: "Contacted",
+            Lead_Status: "Not Contacted",
           },
         ],
       }),

@@ -130,7 +130,7 @@ function Field({
 
 /* ─── Main ────────────────────────────────────────────────────── */
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", company: "", mobile: "", message: "" });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -150,7 +150,7 @@ export default function Contact() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Submission failed');
       setSent(true);
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: "", email: "", company: "", mobile: "", message: "" });
     } catch (err: any) {
       setError(err.message || "Something went wrong. Please try again.");
     } finally {
@@ -202,7 +202,7 @@ export default function Contact() {
                 margin: 0,
               }}
             >
-              Open for partnerships and
+              Partnerships and
             </motion.h2>
           </div>
           <div style={{ overflow: "hidden" }}>
@@ -220,7 +220,7 @@ export default function Contact() {
                 margin: 0,
               }}
             >
-              collaborations worldwide.
+              collaborations.
             </motion.h2>
           </div>
         </div>
@@ -287,10 +287,23 @@ export default function Contact() {
                   placeholder="you@example.com"
                 />
                 <Field
+                  label="Company"
+                  value={form.company}
+                  onChange={(v) => setForm({ ...form, company: v })}
+                  placeholder="Your company name"
+                />
+                <Field
+                  label="Mobile"
+                  type="tel"
+                  value={form.mobile}
+                  onChange={(v) => setForm({ ...form, mobile: v })}
+                  placeholder="+91 98765 43210"
+                />
+                <Field
                   label="Your Message"
                   value={form.message}
                   onChange={(v) => setForm({ ...form, message: v })}
-                  placeholder="Tell me about your idea…"
+                  placeholder="What would you like to collaborate on?"
                   multiline
                 />
 
@@ -358,12 +371,6 @@ export default function Contact() {
                 marginBottom: "0.5rem",
               }}
             ></p>
-            <p
-              className="font-body"
-              style={{ color: "#555", fontSize: "0.8125rem", marginBottom: "3rem", lineHeight: 1.7 }}
-            >
-              Open for partnerships and collaborations worldwide.
-            </p>
 
             {/* Social links — stacked large links */}
             {[

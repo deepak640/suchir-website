@@ -64,12 +64,6 @@ export default function Footer() {
               Shuchir Suri
             </button>
             <p
-              className="font-heading"
-              style={{ fontSize: "0.9375rem", color: "#3a3a3a", fontStyle: "italic", marginBottom: "1.25rem" }}
-            >
-              Shuchir Suri
-            </p>
-            <p
               className="font-body"
               style={{ fontSize: "0.8125rem", color: "#3a3a3a", lineHeight: 1.75, maxWidth: "240px" }}
             >
@@ -178,9 +172,6 @@ export default function Footer() {
             © {year} Shuchir Suri. All rights reserved.
           </p>
 
-          <p className="font-body" style={{ color: "#222", fontSize: "0.75rem" }}>
-            Built with Next.js &amp; Framer Motion
-          </p>
 
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
