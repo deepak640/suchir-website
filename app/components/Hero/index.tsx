@@ -207,9 +207,7 @@ export default function Hero() {
                 marginBottom: '2.25rem',
               }}
             >
-              Delhi-based entrepreneur and content creator — building
-              culture-first brands, producing experiences, and demystifying
-              the F&amp;B space.
+              Delhi-based entrepreneur and content creator, building culture-first brands, producing experiences, and shaping the intersection of creativity, and community.
             </motion.p>
 
             {/* CTAs */}

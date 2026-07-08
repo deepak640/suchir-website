@@ -67,7 +67,7 @@ export default function Footer() {
               className="font-body"
               style={{ fontSize: "0.8125rem", color: "#3a3a3a", lineHeight: 1.75, maxWidth: "240px" }}
             >
-              Delhi-based entrepreneur building brands at the intersection of food, beverage, and culture.
+              Building culture-first brands & experiences. Helping brands scale through content and events.
             </p>
           </div>
 
