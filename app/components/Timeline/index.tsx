@@ -107,11 +107,29 @@ function TimelineEntry({
             fontWeight: 700,
             color: '#F5F5F5',
             lineHeight: 1.15,
-            marginBottom: '0.85rem',
+            marginBottom: item.metric ? '0.7rem' : '0.85rem',
           }}
         >
           {item.title}
         </h3>
+        {item.metric && (
+          <span
+            className="font-body"
+            style={{
+              display: 'inline-block',
+              fontSize: '0.68rem',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              color: '#C8A15A',
+              border: '1px solid rgba(200,161,90,0.3)',
+              background: 'rgba(200,161,90,0.05)',
+              padding: '0.3rem 0.7rem',
+              marginBottom: '0.9rem',
+            }}
+          >
+            {item.metric}
+          </span>
+        )}
         <p
           className="font-body"
           style={{

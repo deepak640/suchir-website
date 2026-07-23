@@ -2,6 +2,8 @@ import { Venture, TimelineItem, GalleryImage, ImpactStat, NavItem } from '@/type
 
 export const navItems: NavItem[] = [
   { label: 'About', href: '#about' },
+  { label: 'Ventures', href: '#ventures' },
+  { label: 'Journey', href: '#journey' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -12,8 +14,12 @@ export const ventures: Venture[] = [
     tagline: "India's Largest Digital Food Network",
     description:
       'Co-founded in 2013 alongside Anjali Batra, Food Talk India began as a highly curated, invite-only Facebook community for crowdsourcing restaurant recommendations. It evolved into one of India\'s largest digital food and drink networks, bridging tech, marketing, and the culinary world.',
+    blurb:
+      "From an invite-only community to one of India's largest digital food networks, reaching millions every month.",
     year: '2013',
     image: '/images/suchir.webp',
+    monogram: 'FT',
+    website: '#',
     category: 'Community & Media',
   },
   {
@@ -22,19 +28,27 @@ export const ventures: Venture[] = [
     tagline: 'Premium Indian Mixers & Tonics',
     description:
       'Launched in 2018, Jade Forest is a homegrown Indian beverage brand specialising in low-calorie, premium mixers and tonics. The brand went on to raise seed funding and has since expanded its presence nationwide.',
+    blurb:
+      'Better-for-you Indian mixers and tonics — low-calorie, seed-funded, and poured nationwide.',
     year: '2018',
     image: '/images/suchir2.webp',
+    monogram: 'JF',
+    website: '#',
     category: 'Premium Beverages',
   },
   {
     id: 'anthem',
     name: 'Anthem',
-    tagline: 'The Newest Venture',
+    tagline: 'Full-Service Marketing Agency',
     description:
-      'Anthem is Shuchir\'s latest venture, continuing his journey of building meaningful brands and experiences.',
+      "Anthem is a full-service marketing agency that partners with some of India's biggest brands, both domestic and global, building campaigns and experiences that connect culture and commerce.",
+    blurb:
+      "A full-service marketing agency partnering with some of India's biggest brands, at home and abroad.",
     year: '2022',
     image: '/images/suchir.webp',
-    category: 'New Venture',
+    monogram: 'AN',
+    website: '#',
+    category: 'Marketing Agency',
   },
 ];
 
@@ -44,35 +58,56 @@ export const timelineItems: TimelineItem[] = [
     title: 'Food Talk India',
     subtitle: 'The Beginning',
     description:
-      'Co-founded Food Talk India with Anjali Batra — a highly curated, invite-only Facebook community for crowdsourcing restaurant recommendations and food experiences across India.',
+      'Co-founded an invite-only food community with Anjali Batra, crowdsourcing where India should eat and drink.',
+    metric: 'Co-founder & Chairman',
   },
   {
-    year: '2014–17',
-    title: 'Building a Network',
-    subtitle: 'Scale & Growth',
+    year: '2015',
+    title: 'Food Talk Plus',
+    subtitle: 'First Raise',
     description:
-      "Food Talk India evolved from an invite-only community into one of India's largest digital food and drink networks, connecting food lovers, chefs, and restaurateurs and bridging tech, marketing, and the culinary world.",
+      "Raised funding to build the Food Talk Plus app, scaling into one of India's largest digital food networks.",
+    metric: '$500K raised',
+  },
+  {
+    year: '2017',
+    title: 'Gin Explorers Club',
+    subtitle: 'Building Experiences',
+    description:
+      'Co-created what grew into the world’s largest gin festival, now spanning Delhi, Mumbai and Bengaluru.',
+    metric: '1,00,000+ attendees',
   },
   {
     year: '2018',
     title: 'Jade Forest',
     subtitle: 'Into Premium Beverages',
     description:
-      'Launched Jade Forest, a homegrown Indian beverage brand specialising in low-calorie, premium mixers and tonics. The brand subsequently raised seed funding to expand its presence nationwide.',
+      'Co-founded a homegrown brand of low-calorie premium mixers and tonics, redefining how India drinks.',
+    metric: 'Premium mixers',
+  },
+  {
+    year: '2020',
+    title: 'Jade Forest Raises Seed',
+    subtitle: 'Backed by Angels',
+    description:
+      'Closed seed funding from prominent angel investors to expand distribution across the country.',
+    metric: '$250K seed',
   },
   {
     year: '2022',
     title: 'Anthem',
     subtitle: 'The Next Chapter',
     description:
-      "Shuchir launches Anthem — his newest venture, continuing to push the boundaries of brand-building and community creation.",
+      "Building Anthem, a full-service marketing agency partnering with some of India's biggest brands.",
+    metric: 'Marketing agency',
   },
   {
     year: 'Present',
     title: 'Delhi & Beyond',
-    subtitle: 'Continuing to Build',
+    subtitle: 'Still Building',
     description:
-      'Based in Delhi, Shuchir continues building culture-first brands, producing experiences, and demystifying the F&B space — 15+ years in and the curiosity hasn\'t slowed down.',
+      'Based in Delhi — building culture-first brands, experiences, and communities across food and drink.',
+    metric: '15+ years',
   },
 ];
 
