@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeUp, staggerContainer, scaleIn, viewportConfig } from '@/lib/animations';
 import SectionLabel from '@/components/ui/SectionLabel';
@@ -8,13 +9,18 @@ import { galleryImages, galleryCategories } from '@/lib/data';
 
 const categoryColors: Record<string, string> = {
   Events: '#C8A15A',
-  Food: '#8B7355',
-  Festivals: '#A0896E',
   Speaking: '#B8956A',
-  'Behind the Scenes': '#9A8060',
+  Interviews: '#A0896E',
+  Podcasts: '#9A8060',
+  'Brand Shoots': '#8B7355',
 };
 
 function GalleryItem({ image, index }: { image: (typeof galleryImages)[0]; index: number }) {
+  // Drop real photos into public/images and point src at them; anything still
+  // named "placeholder-*" renders the elegant fallback tile instead of a broken image.
+  const hasPhoto = Boolean(image.src) && !image.src.includes('placeholder');
+  const accent = categoryColors[image.category] ?? '#C8A15A';
+
   return (
     <motion.div
       variants={scaleIn}
@@ -25,32 +31,43 @@ function GalleryItem({ image, index }: { image: (typeof galleryImages)[0]; index
       whileHover={{ scale: 1.01 }}
       transition={{ duration: 0.4 }}
     >
-      {/* Placeholder */}
       <div
         className="w-full h-full min-h-[220px] flex items-center justify-center relative"
         style={{
-          background: `linear-gradient(135deg, #${['1a1a1a', '161618', '181614', '1a1816', '141618'][index % 5]} 0%, #${['0e0e0e', '0e0e10', '100e0e', '0e100e', '0e0e10'][index % 5]} 100%)`,
-          aspectRatio: image.span === 'tall' ? '3/4' : '4/3',
+          background: hasPhoto
+            ? '#101010'
+            : `linear-gradient(135deg, #${['1a1a1a', '161618', '181614', '1a1816', '141618'][index % 5]} 0%, #${['0e0e0e', '0e0e10', '100e0e', '0e100e', '0e0e10'][index % 5]} 100%)`,
+          aspectRatio: image.span === 'tall' ? '3/4' : image.span === 'wide' ? '16/9' : '4/3',
         }}
       >
-        <div className="text-center">
-          <div
-            className="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center"
-            style={{ background: `${categoryColors[image.category]}15`, border: `1px solid ${categoryColors[image.category]}25` }}
-          >
-            <span style={{ color: categoryColors[image.category] }} className="text-xs font-body">
-              {image.category.charAt(0)}
-            </span>
+        {hasPhoto ? (
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 768px) 50vw, 25vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="text-center">
+            <div
+              className="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center"
+              style={{ background: `${accent}15`, border: `1px solid ${accent}25` }}
+            >
+              <span style={{ color: accent }} className="text-xs font-body">
+                {image.category.charAt(0)}
+              </span>
+            </div>
+            <p className="text-[#2a2a2a] text-xs font-body tracking-widest uppercase">{image.alt}</p>
           </div>
-          <p className="text-[#2a2a2a] text-xs font-body tracking-widest uppercase">{image.alt}</p>
-        </div>
+        )}
 
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-[#0E0E0E]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-5">
           <div>
             <span
               className="text-xs font-body tracking-[0.15em] uppercase mb-1 block"
-              style={{ color: categoryColors[image.category] }}
+              style={{ color: accent }}
             >
               {image.category}
             </span>

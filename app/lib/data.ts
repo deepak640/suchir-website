@@ -4,6 +4,7 @@ export const navItems: NavItem[] = [
   { label: 'About', href: '#about' },
   { label: 'Ventures', href: '#ventures' },
   { label: 'Journey', href: '#journey' },
+  { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -112,15 +113,17 @@ export const timelineItems: TimelineItem[] = [
 ];
 
 export const galleryImages: GalleryImage[] = [
-  { id: '1', src: '/images/placeholder-gallery-1.jpg', alt: 'Food Talk India Event', category: 'Events', span: 'tall' },
-  { id: '2', src: '/images/placeholder-gallery-2.jpg', alt: 'Curated Food Experience', category: 'Food' },
-  { id: '3', src: '/images/placeholder-gallery-3.jpg', alt: 'Festival Moment', category: 'Festivals' },
-  { id: '4', src: '/images/placeholder-gallery-4.jpg', alt: 'Speaking Engagement', category: 'Speaking', span: 'wide' },
-  { id: '5', src: '/images/placeholder-gallery-5.jpg', alt: 'Behind the Scenes', category: 'Behind the Scenes' },
-  { id: '6', src: '/images/placeholder-gallery-6.jpg', alt: 'Anthem Launch', category: 'Events', span: 'tall' },
-  { id: '7', src: '/images/placeholder-gallery-7.jpg', alt: 'Jade Forest Launch', category: 'Food' },
-  { id: '8', src: '/images/placeholder-gallery-8.jpg', alt: 'Community Gathering', category: 'Events' },
-  { id: '9', src: '/images/placeholder-gallery-9.jpg', alt: 'Craft Gin Festival', category: 'Festivals' },
+  { id: '1', src: '/images/placeholder-gallery-1.jpg', alt: 'Gin Explorers Club, Delhi', category: 'Events', span: 'tall' },
+  { id: '2', src: '/images/placeholder-gallery-2.jpg', alt: 'Food Talk India Meetup', category: 'Events' },
+  { id: '3', src: '/images/placeholder-gallery-3.jpg', alt: 'Jade Forest Launch Night', category: 'Events' },
+  { id: '4', src: '/images/placeholder-gallery-4.jpg', alt: 'Keynote: Building F&B Brands', category: 'Speaking', span: 'wide' },
+  { id: '5', src: '/images/placeholder-gallery-5.jpg', alt: 'Founder Fireside Chat', category: 'Speaking' },
+  { id: '6', src: '/images/placeholder-gallery-6.jpg', alt: 'YourStory Founder Feature', category: 'Interviews' },
+  { id: '7', src: '/images/placeholder-gallery-7.jpg', alt: 'Magazine Cover Story', category: 'Interviews' },
+  { id: '8', src: '/images/placeholder-gallery-8.jpg', alt: "The Founder's Table Podcast", category: 'Podcasts', span: 'tall' },
+  { id: '9', src: '/images/placeholder-gallery-9.jpg', alt: 'On Building Brands, Live', category: 'Podcasts' },
+  { id: '10', src: '/images/suchir2.webp', alt: 'Jade Forest Campaign', category: 'Brand Shoots' },
+  { id: '11', src: '/images/suchir.webp', alt: 'Editorial Portrait', category: 'Brand Shoots' },
 ];
 
 export const impactStats: ImpactStat[] = [
@@ -129,4 +132,4 @@ export const impactStats: ImpactStat[] = [
   { number: 1, suffix: '', label: 'Seed Round Raised' },
 ];
 
-export const galleryCategories = ['All', 'Events', 'Food', 'Festivals', 'Speaking', 'Behind the Scenes'];
+export const galleryCategories = ['All', 'Events', 'Speaking', 'Interviews', 'Podcasts', 'Brand Shoots'];
