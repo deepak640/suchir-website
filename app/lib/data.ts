@@ -122,8 +122,8 @@ export const galleryImages: GalleryImage[] = [
   { id: '7', src: '/images/placeholder-gallery-7.jpg', alt: 'Magazine Cover Story', category: 'Interviews' },
   { id: '8', src: '/images/placeholder-gallery-8.jpg', alt: "The Founder's Table Podcast", category: 'Podcasts', span: 'tall' },
   { id: '9', src: '/images/placeholder-gallery-9.jpg', alt: 'On Building Brands, Live', category: 'Podcasts' },
-  { id: '10', src: '/images/suchir2.webp', alt: 'Jade Forest Campaign', category: 'Brand Shoots' },
-  { id: '11', src: '/images/suchir.webp', alt: 'Editorial Portrait', category: 'Brand Shoots' },
+  { id: '10', src: '/images/placeholder-gallery-10.jpg', alt: 'Jade Forest Campaign', category: 'Brand Shoots' },
+  { id: '11', src: '/images/placeholder-gallery-11.jpg', alt: 'Editorial Portrait', category: 'Brand Shoots' },
 ];
 
 export const impactStats: ImpactStat[] = [

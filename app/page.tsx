@@ -16,7 +16,7 @@ export default function Home() {
       <About />
       <Ventures />
       {/*<Timeline />*/}
-      {/*<Gallery />*/}
+      <Gallery />
       <Contact />
       <Expertise />
       <Footer />
