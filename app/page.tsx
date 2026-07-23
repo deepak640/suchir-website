@@ -5,6 +5,7 @@ import Ventures from '@/components/Ventures';
 import Timeline from '@/components/Timeline';
 import Gallery from '@/components/Gallery';
 import Contact from '@/components/Contact';
+import Expertise from '@/components/Expertise';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -14,9 +15,10 @@ export default function Home() {
       <Hero />
       <About />
       <Ventures />
-      <Timeline />
-      <Gallery />
+      {/*<Timeline />*/}
+      {/*<Gallery />*/}
       <Contact />
+      <Expertise />
       <Footer />
     </main>
   );
