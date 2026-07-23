@@ -128,9 +128,19 @@ function Field({
   );
 }
 
+/* ─── Inquiry types ───────────────────────────────────────────── */
+const inquiryTypes = ["Consulting", "Speaking", "Collaboration", "Partnership"];
+
 /* ─── Main ────────────────────────────────────────────────────── */
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", company: "", mobile: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    company: "",
+    mobile: "",
+    message: "",
+    inquiryType: "Consulting",
+  });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -150,7 +160,7 @@ export default function Contact() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Submission failed');
       setSent(true);
-      setForm({ name: "", email: "", company: "", mobile: "", message: "" });
+      setForm({ name: "", email: "", company: "", mobile: "", message: "", inquiryType: "Consulting" });
     } catch (err: any) {
       setError(err.message || "Something went wrong. Please try again.");
     } finally {
@@ -251,7 +261,8 @@ export default function Contact() {
                 lineHeight: 1.7,
               }}
             >
-              Have a collaboration in mind? Drop your details below and I&apos;ll get back to you shortly.
+              For brands and businesses exploring consulting, speaking engagements, collaborations, or
+              partnerships. Tell me what you have in mind and I&apos;ll get back to you shortly.
             </p>
 
             {sent ? (
@@ -273,6 +284,49 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit}>
+                {/* Inquiry type selector */}
+                <div style={{ marginBottom: "1.75rem" }}>
+                  <label
+                    className="font-body"
+                    style={{
+                      display: "block",
+                      fontSize: "0.65rem",
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "#bbb",
+                      marginBottom: "0.75rem",
+                    }}
+                  >
+                    I&apos;m interested in
+                  </label>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem" }}>
+                    {inquiryTypes.map((type) => {
+                      const active = form.inquiryType === type;
+                      return (
+                        <button
+                          key={type}
+                          type="button"
+                          onClick={() => setForm({ ...form, inquiryType: type })}
+                          className="font-body"
+                          style={{
+                            fontSize: "0.75rem",
+                            letterSpacing: "0.06em",
+                            padding: "0.55rem 1.1rem",
+                            borderRadius: "999px",
+                            cursor: "pointer",
+                            transition: "all 0.3s",
+                            border: active ? "1px solid #C8A15A" : "1px solid rgba(255,255,255,0.25)",
+                            background: active ? "#C8A15A" : "transparent",
+                            color: active ? "#0E0E0E" : "#bbb",
+                          }}
+                        >
+                          {type}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
                 <Field
                   label="Your Name"
                   value={form.name}
@@ -300,10 +354,10 @@ export default function Contact() {
                   placeholder="+91 98765 43210"
                 />
                 <Field
-                  label="Your Message"
+                  label="Details of your inquiry"
                   value={form.message}
                   onChange={(v) => setForm({ ...form, message: v })}
-                  placeholder="What would you like to collaborate on?"
+                  placeholder="Tell me about your brand and what you're looking for…"
                   multiline
                 />
 

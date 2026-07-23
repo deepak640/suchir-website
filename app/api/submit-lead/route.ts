@@ -18,10 +18,17 @@ async function getAccessToken(): Promise<string> {
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, company, mobile, message } = await req.json();
+    const { name, email, company, mobile, message, inquiryType } = await req.json();
     if (!name || !email) {
       return NextResponse.json({ error: "Name and email required" }, { status: 400 });
     }
+
+    const description = [
+      inquiryType ? `Inquiry type: ${inquiryType}` : null,
+      message || null,
+    ]
+      .filter(Boolean)
+      .join("\n\n");
 
     const accessToken = await getAccessToken();
 
@@ -38,7 +45,7 @@ export async function POST(req: NextRequest) {
             Email: email,
             Company: company || "",
             Phone: mobile || "",
-            Description: message || "",
+            Description: description,
             Lead_Source: "Web Research",
             Lead_Status: "Not Contacted",
           },
