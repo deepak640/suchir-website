@@ -194,39 +194,6 @@ export default function Hero() {
               Delhi-based entrepreneur and content creator, building culture-first brands, producing experiences, and shaping the intersection of creativity, and community.
             </motion.p>
 
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.25 }}
-              style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem' }}
-            >
-              <button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="font-body"
-                style={{
-                  background: 'none',
-                  border: '1px solid rgba(200,161,90,0.35)',
-                  color: '#F5F5F5',
-                  padding: '0.875rem 2rem',
-                  fontSize: '0.8rem',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#C8A15A';
-                  e.currentTarget.style.color = '#C8A15A';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(200,161,90,0.35)';
-                  e.currentTarget.style.color = '#F5F5F5';
-                }}
-              >
-                Get in Touch
-              </button>
-            </motion.div>
           </div>
 
           {/* RIGHT — portrait */}
@@ -294,6 +261,8 @@ export default function Hero() {
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid > div:first-child { order: 2; }
+          .hero-grid > div:last-child { order: 1; }
           .hero-grid > div:last-child > div {
             width: clamp(220px, 60vw, 320px) !important;
             height: clamp(280px, 75vw, 420px) !important;
