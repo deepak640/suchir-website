@@ -26,38 +26,8 @@ export default function About() {
         overflow: "hidden",
       }}
     >
-      {/* ── Section header strip ─────────────────────────────── */}
-      <div
-        style={{
-          borderBottom: "1px solid rgba(200,161,90,0.1)",
-          padding: "1.25rem clamp(1.5rem, 5vw, 5rem)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <span style={{ width: "2rem", height: "1px", background: "#C8A15A", flexShrink: 0 }} />
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5 }}
-            className="font-body"
-            style={{ fontSize: "0.65rem", letterSpacing: "0.22em", color: "#C8A15A", textTransform: "uppercase" }}
-          >
-            About
-          </motion.span>
-        </div>
-        {/*<motion.span
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-body"
-          style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "#333", textTransform: "uppercase" }}
-        >
-          New Delhi, India
-        </motion.span>*/}
-      </div>
+      {/* ── Section divider ─────────────────────────────── */}
+      <div style={{ borderBottom: "1px solid rgba(200,161,90,0.1)" }} />
 
       {/* ── Main two-column body ─────────────────────────────── */}
       <div className="site-container" style={{ paddingTop: "3rem", paddingBottom: "5rem" }}>

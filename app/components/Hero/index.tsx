@@ -100,22 +100,6 @@ export default function Hero() {
 
           {/* LEFT */}
           <div>
-            {/* Label */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}
-            >
-              <span style={{ width: '2rem', height: '1px', background: '#C8A15A', flexShrink: 0 }} />
-              <span
-                className="font-body"
-                style={{ fontSize: '0.65rem', letterSpacing: '0.22em', color: '#C8A15A', textTransform: 'uppercase' }}
-              >
-                Entrepreneur &amp; Content Creator
-              </span>
-            </motion.div>
-
             {/* Name */}
             <div style={{ overflow: 'hidden', marginBottom: '0.2rem' }}>
               <motion.h1
@@ -310,6 +294,10 @@ export default function Hero() {
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid > div:last-child > div {
+            width: clamp(220px, 60vw, 320px) !important;
+            height: clamp(280px, 75vw, 420px) !important;
+          }
         }
       `}</style>
     </section>

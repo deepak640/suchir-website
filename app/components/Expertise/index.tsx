@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { RiBriefcase4Line, RiMicLine, RiGroupLine, RiCalendarEventLine } from 'react-icons/ri';
+import { RiBriefcase4Line, RiVideoLine, RiFundsLine } from 'react-icons/ri';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -11,86 +11,88 @@ const roles = [
     icon: RiBriefcase4Line,
     title: 'Entrepreneur',
     description:
-      'Founder of Food Talk India, Jade Forest and Anthem — building culture-first brands across food, drink and marketing.',
+      'Building culture-first brands across food, beverage and marketing — from Food Talk India to Jade Forest to Anthem.',
   },
   {
-    icon: RiMicLine,
+    icon: RiVideoLine,
     title: 'Content Creator',
     description:
-      'Creating content that demystifies the F&B world, from what India eats and drinks to how great brands are built.',
+      'Demystifying the F&B world for millions — what India eats, drinks, and how the brands behind it all are built.',
   },
   {
-    icon: RiGroupLine,
-    title: 'Community Builder',
+    icon: RiFundsLine,
+    title: 'Investor',
     description:
-      'Grew Food Talk India from an invite-only circle into one of the country’s largest food and drink communities.',
-  },
-  {
-    icon: RiCalendarEventLine,
-    title: 'Experience Maker',
-    description:
-      'Co-created the Explorers Club, an experiential festival series welcoming 1,00,000+ attendees across three cities.',
+      'Backing bold founders building the next wave of consumer brands — culture-led, community-driven, category-defining.',
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 60, scale: 0.92 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.9,
+      ease,
+      delay: 0.2 + i * 0.18,
+    },
+  }),
+};
+
 export default function Expertise() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
+  const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
     <section
       id="expertise"
       ref={ref}
-      style={{ background: '#0A0A0A', padding: 'clamp(4rem, 8vw, 7rem) 0', borderTop: '1px solid rgba(200,161,90,0.1)' }}
+      className="exp-section"
     >
       <div className="site-container">
         {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-          <span style={{ width: '2rem', height: '1px', background: '#C8A15A', flexShrink: 0 }} />
-          <span className="font-body" style={{ fontSize: '0.65rem', letterSpacing: '0.22em', color: '#C8A15A', textTransform: 'uppercase' }}>
-            What I Do
-          </span>
-        </div>
-        <h2
-          className="font-heading"
-          style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#F5F5F5', letterSpacing: '-0.02em', lineHeight: 1.1, margin: '0 0 3.5rem' }}
+        <motion.div
+          className="exp-header"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.9, ease }}
         >
-          Many hats, one <span className="text-gradient" style={{ fontStyle: 'italic' }}>obsession</span>.
-        </h2>
+          <div className="exp-label-row">
+            <motion.span
+              className="exp-line"
+              initial={{ width: 0 }}
+              animate={inView ? { width: '2.5rem' } : {}}
+              transition={{ duration: 0.8, ease, delay: 0.3 }}
+            />
+            <span className="font-body exp-label">What I Do</span>
+          </div>
+          <h2 className="font-heading exp-heading">
+            Builder by nature, creator by <span className="text-gradient" style={{ fontStyle: 'italic' }}>craft</span>.
+          </h2>
+        </motion.div>
 
-        {/* Grid */}
-        <div className="expertise-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2.5rem' }}>
+        {/* 3-column icon cards */}
+        <div className="exp-grid">
           {roles.map((role, i) => {
             const Icon = role.icon;
             return (
               <motion.div
                 key={role.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, ease, delay: i * 0.1 }}
-                style={{ textAlign: 'center' }}
+                className="exp-card"
+                custom={i}
+                initial="hidden"
+                animate={inView ? 'visible' : 'hidden'}
+                variants={cardVariants}
               >
-                <div
-                  style={{
-                    width: '3.5rem',
-                    height: '3.5rem',
-                    margin: '0 auto 1.25rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px solid rgba(200,161,90,0.3)',
-                    background: 'rgba(200,161,90,0.05)',
-                    color: '#C8A15A',
-                  }}
-                >
-                  <Icon size={24} />
+                <div className="exp-card__glow" />
+                <div className="exp-card__icon-wrap">
+                  <Icon className="exp-card__icon" />
                 </div>
-                <h3 className="font-heading" style={{ fontSize: '1.25rem', fontWeight: 700, color: '#F5F5F5', margin: '0 0 0.75rem' }}>
-                  {role.title}
-                </h3>
-                <p className="font-body" style={{ color: '#A1A1A1', fontSize: '0.875rem', lineHeight: 1.7, margin: 0 }}>
-                  {role.description}
-                </p>
+                <h3 className="font-heading exp-card__title">{role.title}</h3>
+                <div className="exp-card__separator" />
+                <p className="font-body exp-card__desc">{role.description}</p>
               </motion.div>
             );
           })}
@@ -98,11 +100,178 @@ export default function Expertise() {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
-          .expertise-grid { grid-template-columns: 1fr 1fr !important; gap: 2.5rem 1.5rem !important; }
+        .exp-section {
+          background: #0A0A0A;
+          padding: clamp(6rem, 12vw, 10rem) 0;
+          border-top: 1px solid rgba(200,161,90,0.08);
+          overflow: hidden;
         }
-        @media (max-width: 520px) {
-          .expertise-grid { grid-template-columns: 1fr !important; }
+
+        .exp-header {
+          text-align: center;
+          margin-bottom: clamp(4rem, 6vw, 6rem);
+        }
+
+        .exp-label-row {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .exp-line {
+          height: 1px;
+          background: #C8A15A;
+          display: inline-block;
+        }
+
+        .exp-label {
+          font-size: 0.7rem;
+          letter-spacing: 0.25em;
+          color: #C8A15A;
+          text-transform: uppercase;
+        }
+
+        .exp-heading {
+          font-size: clamp(2.6rem, 5vw, 4rem);
+          font-weight: 700;
+          color: #F5F5F5;
+          letter-spacing: -0.025em;
+          line-height: 1.1;
+          margin: 0;
+        }
+
+        /* ── Card grid ── */
+        .exp-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: clamp(2rem, 3vw, 3rem);
+        }
+
+        .exp-card {
+          text-align: center;
+          padding: clamp(2.5rem, 4vw, 3.5rem) clamp(2rem, 3vw, 2.5rem);
+          position: relative;
+          border: 1px solid rgba(200,161,90,0.1);
+          background: rgba(200,161,90,0.02);
+          transition: border-color 0.5s ease, background 0.5s ease;
+          overflow: hidden;
+        }
+
+        .exp-card:hover {
+          border-color: rgba(200,161,90,0.35);
+          background: rgba(200,161,90,0.05);
+        }
+
+        /* Ambient glow behind icon on hover */
+        .exp-card__glow {
+          position: absolute;
+          top: 15%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 120px;
+          height: 120px;
+          background: radial-gradient(circle, rgba(200,161,90,0.12) 0%, transparent 70%);
+          opacity: 0;
+          transition: opacity 0.6s ease;
+          pointer-events: none;
+        }
+
+        .exp-card:hover .exp-card__glow {
+          opacity: 1;
+        }
+
+        /* ── Icon ── */
+        .exp-card__icon-wrap {
+          width: 5.5rem;
+          height: 5.5rem;
+          margin: 0 auto 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(200,161,90,0.25);
+          background: rgba(200,161,90,0.04);
+          color: #C8A15A;
+          position: relative;
+          z-index: 1;
+          transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .exp-card:hover .exp-card__icon-wrap {
+          background: rgba(200,161,90,0.12);
+          border-color: rgba(200,161,90,0.6);
+          transform: translateY(-6px) scale(1.05);
+          box-shadow: 0 8px 30px rgba(200,161,90,0.15);
+        }
+
+        .exp-card__icon {
+          width: 34px;
+          height: 34px;
+          transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .exp-card:hover .exp-card__icon {
+          transform: scale(1.1);
+        }
+
+        /* ── Title ── */
+        .exp-card__title {
+          font-size: clamp(1.5rem, 2vw, 1.8rem);
+          font-weight: 700;
+          color: #F5F5F5;
+          margin: 0 0 1.25rem;
+          letter-spacing: -0.01em;
+          transition: color 0.4s ease;
+        }
+
+        .exp-card:hover .exp-card__title {
+          color: #C8A15A;
+        }
+
+        /* ── Separator ── */
+        .exp-card__separator {
+          width: 2rem;
+          height: 1px;
+          background: rgba(200,161,90,0.3);
+          margin: 0 auto 1.25rem;
+          transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.5s ease;
+        }
+
+        .exp-card:hover .exp-card__separator {
+          width: 4rem;
+          background: #C8A15A;
+        }
+
+        /* ── Description ── */
+        .exp-card__desc {
+          color: #888;
+          font-size: 1rem;
+          line-height: 1.8;
+          margin: 0;
+          max-width: 360px;
+          margin-left: auto;
+          margin-right: auto;
+          transition: color 0.4s ease;
+        }
+
+        .exp-card:hover .exp-card__desc {
+          color: #aaa;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+          .exp-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .exp-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
         }
       `}</style>
     </section>
