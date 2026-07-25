@@ -238,6 +238,7 @@ export default function Hero() {
           bottom: '2rem',
           left: '50%',
           transform: 'translateX(-50%)',
+          zIndex: 2,
           background: 'none',
           border: 'none',
           cursor: 'pointer',
